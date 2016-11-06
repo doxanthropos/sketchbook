@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="" rel="stylesheet" />
+  </head>
+  <body>
+    Volume:
+    <div>
+    <button id="less">Less</button><span id="volume">0.1</span>%<button id="more">More</button>
+    </div>
+    <script>
+    // gain is measured from 0.0 to 1.0, but since I will increase and decrease it, I use a percent value to avoid odd numbers, resulting from off float calculations.
+    var gain = 10;
+    // create web audio api context
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    // create Oscillator node
+    var oscillator = audioCtx.createOscillator();
+
+    // create gain node
+    var gainNode = audioCtx.createGain();
+
+    // create a sine wave with frequency 440 Hz
+    oscillator.type = 'sine';
+    oscillator.frequency.value = 440;
+
+    // connect the oscillator to the gain node to be able to change the volume
+    oscillator.connect(gainNode);
+    gainNode.gain.value = gain/100;
+
+    // connect the gain node to the destination and start oscillation
+    gainNode.connect(audioCtx.destination);
+    oscillator.start();
+
+    // connection the buttons
+    var less = document.getElementById("less");
+    var more = document.getElementById("more");
+    var volume = document.getElementById("volume");
+    volume.innerHTML = "0" + gain;
+    less.onclick = function(){
+      if(gain>0){gain-=10};
+      gainNode.gain.value = gain/100;
+      if(gain==0){ volume.innerHTML = "000"} else { volume.innerHTML = "0" + gain };
+    };
+    more.onclick = function(){
+      if(gain<100){gain+=10};
+      gainNode.gain.value = gain/100;
+      if(gain==100){ volume.innerHTML = "100"} else { volume.innerHTML = "0" + gain };
+    }
+    </script>
+  </body>
+</html>

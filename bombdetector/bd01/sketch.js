@@ -4,11 +4,21 @@ var columns = 10;
 var bombs = 10;
 var grid = [];
 var knownGrid = [];
-var playing = true;
+var playing = false;
+var lost = false;
 var warningColors = ["white","#d4ff00","#ffff00","#ffd500","#ffaa00","#ff8000","#ff5500","#ff1500","#ff0000"]
+var currentSize;
+var cell;
 
 function setup() {
-  createCanvas(550,550);
+
+  if (windowWidth>windowHeight){
+    currentSize = windowHeight;
+  } else {
+    currentSize = windowWidth;
+  }
+  cell = currentSize / rows;
+  createCanvas(currentSize,currentSize);
   background("white");
   initializeGrid(columns,rows,bombs);
   //noLoop();
@@ -34,16 +44,16 @@ function drawGrid(){
     for(var row = 0;row<rows;row++){
       if(knownGrid[column][row]=="X"){
         fill("green");
-        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
+        rect(column*cell,row*cell,cell,cell);
       } else if(knownGrid[column][row]==0){
         fill("white");
-        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
+        rect(column*cell,row*cell,cell,cell);
       } else if(knownGrid[column][row]=="*"){
         fill("black");
-        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
+        rect(column*cell,row*cell,cell,cell);
       } else {
         fill(warningColors[knownGrid[column][row]]);
-        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
+        rect(column*cell,row*cell,cell,cell);
       }
       
     }
@@ -55,7 +65,11 @@ function drawSidebar(){
 }
 /* This function will display the start menu */
 function drawMenu(){
-  
+  if(lost){
+    background("black");
+  }
+  fill("blue");
+  ellipse(width/2,height/2,currentSize/2,currentSize/2);
 }
 /* building a grid with bombs */
 function initializeGrid(gridColumns,gridRows,gridBombs){
@@ -109,14 +123,23 @@ for(var i = 0;i<gridBombs;i++){
 
 function mousePressed(){
   if(playing){
-  var selectedColumn = Math.floor(mouseX / (50))
-  var selectedRow = Math.floor(mouseY / (50))
+  var selectedColumn = Math.floor(mouseX / cell)
+  var selectedRow = Math.floor(mouseY / cell)
   console.log(mouseX + ":" +selectedColumn);
   dig(selectedColumn,selectedRow);
-  }
+  }  else {
+    if(mouseX>currentSize/4&&mouseX<(currentSize/4*3)&&mouseY>currentSize/4&&mouseY<(currentSize/4*3)){
+      playing = true;
+      background("white");
+      initializeGrid(columns,rows,bombs);
+    }
 }
 function dig(selectedColumn,selectedRow){
   knownGrid[selectedColumn][selectedRow] = grid[selectedColumn][selectedRow];
+  if(grid[selectedColumn][selectedRow]=="*"){
+    playing = false;
+    lost = true;
+  }
   if(grid[selectedColumn][selectedRow]==0){
     /* digging recursively into empty spaces */
             /* NE */
@@ -135,5 +158,6 @@ function dig(selectedColumn,selectedRow){
         if(selectedColumn<(rows-1)&&selectedRow>0&&knownGrid[selectedColumn+1][selectedRow-1]=="X"){ dig(selectedColumn+1,selectedRow-1); }
         /* E */
         if(selectedRow>0&&knownGrid[selectedColumn][selectedRow-1]=="X"){ dig(selectedColumn,selectedRow-1); }
+  }
   }
 }

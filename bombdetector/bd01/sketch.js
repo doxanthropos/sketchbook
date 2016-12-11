@@ -4,36 +4,59 @@ var columns = 10;
 var bombs = 10;
 var grid = [];
 var knownGrid = [];
+var playing = true;
+var warningColors = ["white","#d4ff00","#ffff00","#ffd500","#ffaa00","#ff8000","#ff5500","#ff1500","#ff0000"]
 
 function setup() {
-  createCanvas(600,600);
+  createCanvas(550,550);
   background("white");
   initializeGrid(columns,rows,bombs);
-  noLoop();
+  //noLoop();
 }
 
 function draw() {
-  drawGrid();
+  if(playing) { drawBoard(); 
   for(var i = 0;i<rows;i++){
-    console.log(join(grid[i]));
+  }
+  } else {
+    drawMenu();
   }
 }
 
+function drawBoard(){
+  drawGrid();
+  drawSidebar();
+}
+
+/* drawing the known grid */
 function drawGrid(){
-  console.log("Drawing Grid!");
   for(var column = 0;column<columns;column++){
     for(var row = 0;row<rows;row++){
       if(knownGrid[column][row]=="X"){
         fill("green");
-      } else {
+        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
+      } else if(knownGrid[column][row]==0){
         fill("white");
+        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
+      } else if(knownGrid[column][row]=="*"){
+        fill("black");
+        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
+      } else {
+        fill(warningColors[knownGrid[column][row]]);
+        rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
       }
-      rect(column*width/(rows+1),row*width/(rows+1),width/(rows+1),width/(rows+1));
-      console.log(width/(rows+1));
+      
     }
   }
 }
 
+function drawSidebar(){
+  
+}
+/* This function will display the start menu */
+function drawMenu(){
+  
+}
 /* building a grid with bombs */
 function initializeGrid(gridColumns,gridRows,gridBombs){
  for(var i = 0;i<gridRows;i++){
@@ -52,8 +75,6 @@ for(var i = 0;i<gridBombs;i++){
     var column = Math.floor(random(gridColumns));
     if(grid[column][row]=="X"){
       grid[column][row]="*";
-      console.log(row);
-      console.log(column);
       bombUnset = false;
     }
   }
@@ -83,5 +104,36 @@ for(var i = 0;i<gridBombs;i++){
         if(j>0){ if(grid[i][j-1] == "*"){ grid[i][j]++;}}
       }
     }
+  }
+}
+
+function mousePressed(){
+  if(playing){
+  var selectedColumn = Math.floor(mouseX / (50))
+  var selectedRow = Math.floor(mouseY / (50))
+  console.log(mouseX + ":" +selectedColumn);
+  dig(selectedColumn,selectedRow);
+  }
+}
+function dig(selectedColumn,selectedRow){
+  knownGrid[selectedColumn][selectedRow] = grid[selectedColumn][selectedRow];
+  if(grid[selectedColumn][selectedRow]==0){
+    /* digging recursively into empty spaces */
+            /* NE */
+        if(selectedColumn>0&&selectedRow>0&&knownGrid[selectedColumn-1][selectedRow-1]=="X"){ dig(selectedColumn-1,selectedRow-1); }
+        /* N */
+        if(selectedColumn>0&&knownGrid[selectedColumn-1][selectedRow]=="X"){ dig(selectedColumn-1,selectedRow); }
+        /* NW */
+        if(selectedColumn>0&&selectedRow<(columns-1)&&knownGrid[selectedColumn-1][selectedRow+1]=="X"){ dig(selectedColumn-1,selectedRow+1); }
+        /* W */
+        if(selectedRow<(columns-1)&&knownGrid[selectedColumn][selectedRow+1]=="X"){ dig(selectedColumn,selectedRow+1);}
+        /* SW */
+        if(selectedColumn<(rows-1)&&selectedRow<(columns-1)&&knownGrid[selectedColumn+1][selectedRow+1]=="X"){ dig(selectedColumn+1,selectedRow+1); }
+        /* S */
+        if(selectedColumn<(rows-1)&&knownGrid[selectedColumn+1][selectedRow]=="X"){ dig(selectedColumn+1,selectedRow); }
+        /* SE */
+        if(selectedColumn<(rows-1)&&selectedRow>0&&knownGrid[selectedColumn+1][selectedRow-1]=="X"){ dig(selectedColumn+1,selectedRow-1); }
+        /* E */
+        if(selectedRow>0&&knownGrid[selectedColumn][selectedRow-1]=="X"){ dig(selectedColumn,selectedRow-1); }
   }
 }

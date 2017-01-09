@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, Pink Sky! - A-Frame</title>
+    <meta name="description" content="Hello, World! - A-Frame">
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Box textures are from this collection:
+      http://opengameart.org/content/free-metal-texture-creation-set-08
+      found in this content category:
+      http://opengameart.org/content/metal-textures
+    -->
+    <img id="boxTexture1" src="./img/set8_example_1.png">
+    <img id="boxTexture2" src="./img/set8_example_2.png">
+    <img id="boxTexture3" src="./img/set8_example_3.png">
+</a-assets>
+<!-- Doorway 1 -->
+      <a-box src="#boxTexture1" position="2 2 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture1" position="-2 2 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture2" position="2 4 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture2" position="0 4 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture2" position="-2 4 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-dodecahedron color="#9999FF" position="0 2 -5"  radius="0.5">
+        <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000"
+  repeat="indefinite"></a-animation>
+      </a-dodecahedron>
+<!-- Doorway 2 -->
+      <a-box src="#boxTexture1" position="2 2 5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture1" position="-2 2 5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture2" position="2 4 5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture2" position="0 4 5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-box src="#boxTexture2" position="-2 4 5" rotation="0 0 0" scale="2 2 2"></a-box>
+      <a-dodecahedron color="#FF99FF" position="0 2 5"  radius="0.5">
+        <a-animation attribute="position" to="0 2.2 5" direction="alternate" dur="2000"
+  repeat="indefinite"></a-animation>
+      </a-dodecahedron>
+      <a-sky color="#111"></a-sky>
+      <a-plane repeat="10 10" color="gray" rotation="-90 0 0" width="30" height="30"></a-plane>
+      <a-light type="ambient" color="#445451"></a-light>
+<a-light type                                                                                                                       ="point" intensity="2" position="2 4 4"></a-light>
+    </a-scene>
+  </body>
+</html>

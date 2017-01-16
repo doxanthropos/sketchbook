@@ -22,6 +22,10 @@ function draw() {
   a = a + 0.01;
   } else {
     background(0);
+    stroke(255);
+    textAlign(CENTER);
+    text("Click to play",width/2,height/2);
+    text("Avoid the yellow circle!",width/2,height -30);
   }
 }
 

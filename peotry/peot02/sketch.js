@@ -60,7 +60,7 @@ function generateParagraph(){
    
   randomSeed(seeder);
   myUrl = baseUrl + "?v=" + seeder;
-  start = ["When"];
+  start = [random(Object.keys(chain))];
   for(var i = 0;i<30;i++){
     var gram = start[start.length -1];
     if(chain[gram]){
@@ -73,9 +73,10 @@ function generateParagraph(){
       i++;
     }
   }
-  peotPara.html(start.join(" ") + ".");
-  console.log("The random seed is: " + seeder);
- 
+  var currentPeom = start.join(" ") + ".";
+  currentPeom = currentPeom.charAt(0).toUpperCase() + currentPeom.slice(1);
+  peotPara.html(currentPeom);
+  console.log("The random seed is: " + seeder); 
   peomUrl.html("Permalink to this Peom: " + myUrl);
 }
 

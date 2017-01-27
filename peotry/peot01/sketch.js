@@ -12,7 +12,7 @@ var baseUrl;
 var currentU;
 
 function preload(){
-  lines = loadStrings("dunwich1.txt");
+  lines = loadStrings("../texte/dunwich.txt");
 }
 function setup() {
   noCanvas();

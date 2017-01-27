@@ -12,7 +12,7 @@ var baseUrl;
 var currentU;
 
 function preload(){
-  lines = loadStrings("dunwich1.txt");
+  lines = loadStrings("../texte/dunwich.txt");
 }
 function setup() {
   noCanvas();
@@ -31,7 +31,6 @@ function draw() {
      if(st.length>order){
      for(var i = 0;i<st.length-order;i++){
       var gram = String(st[i]);
-      if(gram=="watch"){ console.log("Gram: " + st[i]+ " Zeug: " + st[i+1]); }
       if(chain[gram]&&Array.isArray(chain[gram])){
         chain[gram].push(String(st[i+1]));
       } else {
@@ -64,10 +63,8 @@ function generateParagraph(){
   start = ["When"];
   for(var i = 0;i<30;i++){
     var gram = start[start.length -1];
-    console.log(gram);
     if(chain[gram]){
     start.push(random(chain[gram]));
-    console.log("Start ist: " + start);
     } else { start.pop();i--;}
   }
   for(var i = 0;i<start.length;i++){
@@ -77,7 +74,7 @@ function generateParagraph(){
     }
   }
   peotPara.html(start.join(" ") + ".");
-  console.log(seeder);
+  console.log("The random seed is: " + seeder);
  
   peomUrl.html("Permalink to this Peom: " + myUrl);
 }

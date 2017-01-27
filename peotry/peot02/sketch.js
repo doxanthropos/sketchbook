@@ -74,7 +74,7 @@ function generateParagraph(){
     }
   }
   var currentPeom = start.join(" ") + ".";
-  currentPeom = currentPeom.charAt(0).toUpperCase() + currentPeom.slice(1);
+  currentPeom = "<span class='initial'>" + currentPeom.charAt(0).toUpperCase() + "</span>" + currentPeom.slice(1);
   peotPara.html(currentPeom);
   console.log("The random seed is: " + seeder); 
   peomUrl.html("Permalink to this Peom: " + myUrl);

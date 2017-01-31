@@ -66,6 +66,7 @@ function generateParagraph(){
   peotPara.html(currentPeom);
   console.log("The random seed is: " + seeder);
   peomUrl.html("Permalink to this Peom: " + myUrl);
+  document.getElementById('twitterbutton').setAttribute("href","https://twitter.com/intent/tweet?text="+encodeURI("You have to read this awesome Peom!1!") +"&url=" + encodeURI(myUrl)+ "&via=" + encodeURI("doxanthropos"));
 }
 
 function generateChain(){
@@ -90,7 +91,9 @@ function textLoaded(){
   /* create the html elements for displaying the generated text 
   * and filling them with the first text  */
   peotPara = createP();
+  peotPara.parent('content');
   newPeom = createButton("Click here for a new Peom");
+  newPeom.parent('content');
   peomUrl = createP();
   if(currentU.indexOf("?v=") < 0){
     seeder = round(random(1000000));

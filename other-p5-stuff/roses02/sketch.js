@@ -18,7 +18,7 @@ function draw() {
     rose(k2,t,width/4);
     pop();
   }
-  save("rose02.jpg");
+  //  save("rose02.jpg");
 }
 
 function rose(k,t,r){

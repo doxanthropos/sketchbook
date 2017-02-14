@@ -1,23 +1,22 @@
 var k1 = 3/5;
 var k2 = 4/5;
 function setup() {
-  createCanvas(400,200);
-  background(0);
+  createCanvas(500,500);
+  background(255);
+  fill(0);
   noStroke();
-  noLoop();
+  //noLoop();
 }
 
 function draw() {
+  background(255);
   for(var t = 0;t<50;t+=0.01){
     push();
-    translate(width/4,height/2);
-    rose(k1,t,width/4);
-    pop();
-    push();
-    translate(width/4*3,height/2);
-    rose(k2,t,width/4);
+    translate(width/2,height/2);
+    rose(k1,t,width/2-50);
     pop();
   }
+  k1 += 0.01;
   //  save("rose02.jpg");
 }
 

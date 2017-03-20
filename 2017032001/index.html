@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Canvas Course</title>
+  <link href="./style.css" rel="stylesheet" />
+ </head>
+<body>
+  <p>
+  <video autoplay="true" id="videoElement">
+  </video>
+  <button onclick="captureImage()">Capture Image</button>
+  </p>
+  <canvas id="c" width="500" height="500"></canvas>
+  <p>
+    <button onclick="grayscale(ctx);">Grayscale</button>
+    <button onclick="invert(ctx);">Invert</button>
+    <button onclick="redGray(ctx);">Redshift</button>
+    <button onclick="greenscreen(ctx);">Greenscreen</button>
+    <button onclick="reset(ctx);">Reset</button>
+  </p>
+  <p>
+    Use your own images: <input type="file" onchange="showFile()">
+  </p>
+  <p>
+  Just a few short words:<br/>
+  This is made in vanilla JavaScript with the Canvas and its pixel array.<br/>
+  The first two effects are from assignments in <a href="https://www.udacity.com/course/html5-canvas--ud292">HTML5 Canvas </a> a course on Udacity.
+  </p>
+  <p>
+    To download the resulting image: right-click and save-as ..
+  </p>
+  <script src="./script.js"></script>
+</body>
+</html>

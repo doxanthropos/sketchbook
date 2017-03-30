@@ -4,6 +4,8 @@ As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Process
 
 # Here are some:
 
+* [2017033004](https://doxanthropos.github.io/sketchbook/2017033004): A full synth. Danger: noise possible!
+* [2017033003](https://doxanthropos.github.io/sketchbook/2017033003): Again combining previous concepts into one sketch
 * [2017033002](https://doxanthropos.github.io/sketchbook/2017033002): Additive Oscillators from the course
 * [2017033001](https://doxanthropos.github.io/sketchbook/2017033001): Combined the previous two: Keyboard instrument with mouse controlled modulation
 * [2017032904](https://doxanthropos.github.io/sketchbook/2017032904): Slight variatin on the example code for modulating an oscillator with an oscillator.

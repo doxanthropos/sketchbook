@@ -4,6 +4,7 @@ As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Process
 
 # Here are some:
 
+* [2017033001](https://doxanthropos.github.io/sketchbook/2017033001): Combined the previous two: Keyboard instrument with mouse controlled modulation
 * [2017032904](https://doxanthropos.github.io/sketchbook/2017032904): Slight variatin on the example code for modulating an oscillator with an oscillator.
 * [2017032903](https://doxanthropos.github.io/sketchbook/2017032903): Imitating a piano ... sort of.
 * [2017032902](https://doxanthropos.github.io/sketchbook/2017032902): Sound controlled by keyboard

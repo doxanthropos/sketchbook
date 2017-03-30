@@ -1,0 +1,20 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style> body {padding: 0; margin: 0;} </style>
+</head>
+
+<body>
+  <div
+    style="background: black;color:#666; height: 500px;"
+    tabindex="1"
+    onkeydown="playNote(event.key);"
+    onkeyup="endNote();"
+    onmousemove="lfo.frequency.value = event.clientX;"
+    >
+    Press keys from 1 to 9 to change the frequency, 0 to silence<br />
+    or press the bottom row key yxcvbnm (qwertz-keyboard) for musical notes from C to B<br />
+  Use the keys s,d,g,h,j for the notes between (the black keys)</div>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+</body>
+</html>

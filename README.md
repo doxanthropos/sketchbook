@@ -4,6 +4,7 @@ As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Process
 
 # Here are some:
 
+* [2017040301](https://doxanthropos.github.io/sketchbook/2017040401): First Sketch from the second week of the futurelearn course.
 * [2017033005](https://doxanthropos.github.io/sketchbook/2017033005): Submission for the first week of the course.
 * [2017033004](https://doxanthropos.github.io/sketchbook/2017033004): A full synth. Danger: noise possible!
 * [2017033003](https://doxanthropos.github.io/sketchbook/2017033003): Again combining previous concepts into one sketch

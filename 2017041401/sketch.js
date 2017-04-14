@@ -1,3 +1,8 @@
+/*
+  The snare sound is from:
+   https://freesound.org/people/duskstep/sounds/160863/
+ */
+
 var audio_context = window.AudioContext || window.webkitAudioContext;
 
 var con = new audio_context();

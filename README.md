@@ -1,9 +1,10 @@
 # sketchbook
 
-As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Processing](http://processing.org/) sketches.
+As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Processing](http://processing.org/) and other HTML/CSS/JS-based sketches.
 
 # Here are some:
 
+* [2017041402](https://doxanthropos.github.io/sketchbook/2017041402): Playing sequences with setInterval 
 * [2017041401](https://doxanthropos.github.io/sketchbook/2017041401): First sketch of the third week, loading and playing a sound in webaudio
 * [2017040503](https://doxanthropos.github.io/sketchbook/2017040503): First sketch with tilt sensor from the course.
 * [2017040502](https://doxanthropos.github.io/sketchbook/2017040502): Plugged the previous sketch onto an object literal of oscillators.
@@ -18,6 +19,9 @@ As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Process
 * [2017032903](https://doxanthropos.github.io/sketchbook/2017032903): Imitating a piano ... sort of.
 * [2017032902](https://doxanthropos.github.io/sketchbook/2017032902): Sound controlled by keyboard
 * [2017032901](https://doxanthropos.github.io/sketchbook/2017032901): Mouse controlled oscillator from futurelearn course [Learn to Code Electronic Music Tools with Javascript](https://www.futurelearn.com/courses/electronic-music-tools)
+
+## Some sketches from march
+
 * [2017032301](https://doxanthropos.github.io/sketchbook/2017032301)
 * [2017032001](https://doxanthropos.github.io/sketchbook/2017032001)
 * [2017031901](https://doxanthropos.github.io/sketchbook/2017031901) 

@@ -1,3 +1,6 @@
 #!/bin/bash
 
+# $HOME/Vorlagen/empty-example is the path to the folder from the P5 download.
+# I have this script in my ~/bin folder, which is in my PATH
+
 cp -r $HOME/Vorlagen/empty-example $1

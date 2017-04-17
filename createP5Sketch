@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp -r $HOME/Vorlagen/empty-example $1

@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+import os,sys,re
+from datetime import datetime
+
+currentDir = os.listdir("./")
+currentDate = datetime.today().strftime("%Y%m%d")
+r = re.compile(currentDate + ".")
+todaysSketches = filter(r.match,currentDir)
+
+if(len(todaysSketches)>=9):
+    sketchname = currentDate + str(len(todaysSketches) + 1)
+    print currentDate + "0" + str(len(todaysSketches) + 1)
+elif(len(todaysSketches)>0 and len(todaysSketches)<9):
+    sketchname = currentDate + "0" + str(len(todaysSketches) + 1)
+else:
+    sketchname = currentDate + "01"
+print("Creating sketch: " + sketchname)
+
+os.system("cp -r $HOME/Vorlagen/empty-example " + sketchname)
+os.system("emacs " + sketchname + "/sketch.js &")
+os.system("http-server ./" + sketchname)

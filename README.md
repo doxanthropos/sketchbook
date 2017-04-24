@@ -4,6 +4,7 @@ As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Process
 
 # Here are some:
 
+* [2017042401](https://doxanthropos.github.io/sketchbook/2017042401): Better timing through waiting 
 * [2017041402](https://doxanthropos.github.io/sketchbook/2017041402): Playing sequences with setInterval 
 * [2017041401](https://doxanthropos.github.io/sketchbook/2017041401): First sketch of the third week, loading and playing a sound in webaudio
 * [2017040503](https://doxanthropos.github.io/sketchbook/2017040503): First sketch with tilt sensor from the course.

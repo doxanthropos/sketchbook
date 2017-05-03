@@ -4,6 +4,7 @@ As the name says: this is a sketchbook for [p5js](http://p5js.org/) and [Process
 
 # Here are some:
 
+* [2017050301](https://doxanthropos.github.io/sketchbook/2017050301): Ikeda attractor
 * [2017050202](https://doxanthropos.github.io/sketchbook/2017050202): Moving pattern variation - interaction via mouse position
 * [2017050201](https://doxanthropos.github.io/sketchbook/2017050201): Moving pattern based on islamic decorative art as shown in the first week of the FL-course [Creative Coding](https://www.futurelearn.com/courses/creative-coding) by the Monash University.
 * [2017042401](https://doxanthropos.github.io/sketchbook/2017042401): Better timing through waiting 

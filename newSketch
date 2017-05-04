@@ -17,6 +17,6 @@ else:
     sketchname = currentDate + "01"
 print("Creating sketch: " + sketchname)
 
-os.system("cp -r $HOME/Vorlagen/empty-example " + sketchname)
-os.system("emacs " + sketchname + "/sketch.js &")
+os.system("cp -r $HOME/Templates/empty-example " + sketchname)
+os.system("kate " + sketchname + "/sketch.js &")
 os.system("http-server ./" + sketchname)

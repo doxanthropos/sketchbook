@@ -15,6 +15,8 @@ You will also need a folder with an empty example of [p5js](http://p5js.org) ins
 
 ## Some sketches
 
+* [2017092902](https://doxanthropos.github.io/sketchbook/2017092902): 10PRINT with changing colors
+* [2017092901](https://doxanthropos.github.io/sketchbook/2017092901): 10PRINT after following the coding train
 * [2017050301](https://doxanthropos.github.io/sketchbook/2017050301): Ikeda attractor
 * [2017050202](https://doxanthropos.github.io/sketchbook/2017050202): Moving pattern variation - interaction via mouse position
 * [2017050201](https://doxanthropos.github.io/sketchbook/2017050201): Moving pattern based on islamic decorative art as shown in the first week of the FL-course [Creative Coding](https://www.futurelearn.com/courses/creative-coding) by the Monash University.

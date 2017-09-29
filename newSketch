@@ -10,7 +10,7 @@ todaysSketches = filter(r.match,currentDir)
 
 if(len(todaysSketches)>=9):
     sketchname = currentDate + str(len(todaysSketches) + 1)
-    print currentDate + "0" + str(len(todaysSketches) + 1)
+    print( currentDate + "0" + str(len(todaysSketches) + 1))
 elif(len(todaysSketches)>0 and len(todaysSketches)<9):
     sketchname = currentDate + "0" + str(len(todaysSketches) + 1)
 else:

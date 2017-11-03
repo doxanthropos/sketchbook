@@ -15,6 +15,8 @@ You will also need a folder with an empty example of [p5js](http://p5js.org) ins
 
 ## Some sketches
 
+* [Codevember2017](https://doxanthropos.github.io/sketchbook/codevember2017)
+
 * [2017092902](https://doxanthropos.github.io/sketchbook/2017092902): 10PRINT with changing colors
 * [2017092901](https://doxanthropos.github.io/sketchbook/2017092901): 10PRINT after following the coding train
 * [2017050301](https://doxanthropos.github.io/sketchbook/2017050301): Ikeda attractor

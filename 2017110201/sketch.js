@@ -1,7 +1,8 @@
 var myStar = [];
 var number = 500;
 function setup() {
-  createCanvas(600,600);
+  var canvas = createCanvas(600,600);
+  canvas.parent("canvas");
   background(0);
   noStroke();
   fill(200);

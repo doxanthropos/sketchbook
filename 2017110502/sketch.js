@@ -17,21 +17,23 @@ function draw() {
   background(0);
   for(var i=0;i<tree.length;i++){
     tree[i].show();
-    //tree[i].jitter();
+    tree[i].jitter();
   }
   for(var i=0;i<leaves.length;i++){
     noStroke();
-    fill(190,100);
+    fill(255,0,255,100);
     ellipse(leaves[i].x,leaves[i].y,10,10);
   }
 }
 
 function mousePressed(){
-  if(count>=5){
+  if(count==5){
     for(var i=0;i<tree.length;i++){
-      leaves.push(tree[i].end.copy());
+      if(tree[i].finished==false){
+        leaves.push(tree[i].end);
+      }
     }
-  } else {
+  } else if(count<5) {
     var treeLength = tree.length;
     for(var i=0;i<treeLength;i++){
       if(tree[i].finished==false){

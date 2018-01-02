@@ -11,7 +11,9 @@ So one line of your bashrc might look like this:
 export myEditor="vim"
 ```
 
-You will also need a folder with an empty example of [p5js](http://p5js.org) inside a folder called "Templates" located at "~/".
+A quick look at it will tell you that it expects the Python interpreter to be at /usr/bin/python, like it is on most Linux versions (and maybe also on Mac OS, I guess).
+
+The script will ask you, what type of sketch you want to start and you have to answer with one of the given options.
 
 ## Some sketches
 

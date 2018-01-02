@@ -3,11 +3,18 @@
 import os,sys,re
 from datetime import datetime
 
+
+options = { '0':'empty-example','1':'threejs-empty' }
 currentDir = os.listdir("./")
 currentDate = datetime.today().strftime("%Y%m%d")
 r = re.compile(currentDate + ".")
 todaysSketches = filter(r.match,currentDir)
 
+print("What kind of sketch do you want to create today?")
+print("(0) for p5.js")
+print("(1) for Three.js")
+print("");
+sketchtype = raw_input(">> ")
 if(len(todaysSketches)>=9):
     sketchname = currentDate + str(len(todaysSketches) + 1)
     print( currentDate + "0" + str(len(todaysSketches) + 1))
@@ -15,8 +22,13 @@ elif(len(todaysSketches)>0 and len(todaysSketches)<9):
     sketchname = currentDate + "0" + str(len(todaysSketches) + 1)
 else:
     sketchname = currentDate + "01"
-print("Creating sketch: " + sketchname)
 
-os.system("cp -r ./empty-example " + sketchname)
-os.system("$myEditor " + sketchname + "/sketch.js &")
-os.system("http-server ./" + sketchname)
+print(sketchtype)
+if sketchtype in options:
+    print("Creating sketch: " + sketchname)
+    os.system("cp -r ./" + options[sketchtype] + " " + sketchname)
+    os.system("$myEditor " + sketchname + "/sketch.js &")
+    os.system("http-server ./" + sketchname)
+else:
+    print("You did not choose one of the possible options.")
+    print("Aborting sketch creation.")

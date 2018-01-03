@@ -4,7 +4,7 @@ import os,sys,re
 from datetime import datetime
 
 
-options = { '0':'empty-example','1':'threejs-empty' }
+options = { '0':'empty-example','1':'empty-threejs', '2':'empty-aframe' }
 currentDir = os.listdir("./")
 currentDate = datetime.today().strftime("%Y%m%d")
 r = re.compile(currentDate + ".")
@@ -13,6 +13,7 @@ todaysSketches = filter(r.match,currentDir)
 print("What kind of sketch do you want to create today?")
 print("(0) for p5.js")
 print("(1) for Three.js")
+print("(2) for A-Frame")
 print("");
 sketchtype = raw_input(">> ")
 if(len(todaysSketches)>=9):

@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript" src="p5.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <!--<script language="javascript" src="addons/p5.dom.js"></script>-->
+  <!--<script language="javascript" src="addons/p5.sound.js"></script>-->
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.pubnub.com/pubnub-3.7.14.min.js"></script>
+  <script src="https://cdn.pubnub.com/webrtc/webrtc.js"></script>
+  <style> body {padding: 0; margin: 0; text-align: center;} </style>
+</head>
+
+<body>
+  <div id="vid-box"></div>
+  <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
+    <input type="text" name="username" id="username" placeholder="Pick a username!" />
+    <input type="submit" name="login_submit" value="Log In" />
+  </form>
+
+  <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);" />
+    <input type="text" name="number" placeholder="Wnter a user to dial!" />
+    <input type="submit" value="Call" />
+  </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body {
+    margin: 0 10vw 0 10vw;
+    font-family: Courier, monotype;
+    background: #000009;
+    color: #6060ff;
+}
+
+
+a, a:visited {
+    color: #8040ff;
+}
+a, a:visited {
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+a:hover {
+    color: #EE40FF;
+}
+
+header, footer {
+    background: #000020;
+    display: grid;
+    padding: 1vw;
+}
+
+header a, footer p, h1 {
+    margin: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+
+
+article {
+    padding: 5%;
+    border: 3px solid #1111FF;
+    border-radius: 0% 15% 0% 15%;
+}
+
+/* The following is a little disappointing for me, because I do not have Safari and so I have not browser that supports it. */
+@supports ( initial-letter: 4 ) or ( -webkit-initial-letter: 4 ) {
+    p::first-letter {
+	-webkit-initial-letter: 4;
+	initial-letter: 4;
+	color: red;
+    }
+}

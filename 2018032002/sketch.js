@@ -3,10 +3,9 @@ window.onload = function(){
       ctx = c.getContext("2d"),
       width = canvas.width = window.innerWidth,
       height = canvas.height = window.innerHeight;
-  for(var i = 0; i < 100; i += 1){
-    ctx.beginPath();
-    ctx.moveTo(Math.random() * width, Math.random() * height);
-    ctx.lineTo(Math.random() * width, Math.random() * height);
-    ctx.stroke();
+  ctx.translate(0,height/2);  for(var angle = 0; angle < Math.PI * 2; angle += 0.01){
+    var x = angle * 200,
+	y = Math.sin(angle) * 200;
+    ctx.fillRect(x,y,5,5);
   }
 };

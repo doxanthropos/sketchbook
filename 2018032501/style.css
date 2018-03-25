@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+
+@keyframes hide {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 14rem white; }
+    to { text-shadow: 0 0 0 white; }
+}
+.opening {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.9)), url('./wasteland-bg.jpg') no-repeat 50% 0%/cover;
+}
+
+.opening-text {
+    margin: 0;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    font-size: 3.6rem;
+    text-align: center;
+    font-family: Courier, monospace;
+}
+
+.opening-text span {
+    opacity: 0;
+    animation:
+    hide 8s ease-in-out infinite,
+    glow 8s ease-in-out infinite;
+}
+
+.opening-text span:nth-child(6n) { 
+   animation-delay: 900ms; 
+}
+.opening-text span:nth-child(6n-1) { 
+   animation-delay: 700ms; 
+}
+.opening-text span:nth-child(6n-3) { 
+   animation-delay: 600ms; 
+}
+.opening-text span:nth-child(6n-4) { 
+   animation-delay: 300ms; 
+}
+.opening-text span:nth-child(6n-5) { 
+   animation-delay: 0s; 
+}

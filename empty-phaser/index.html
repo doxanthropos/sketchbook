@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Phaser Example from Catt Small on Coding Train</title>
+  <!-- followed this video tutorial: https://www.youtube.com/watch?v=T9kOFSFvgKc -->
+
+  <!-- Loading Phaser -->
+  <script language="javascript" type="text/javascript" src="scripts/phaser.min.js"></script>
+
+  <!-- Loading the other game files -->
+  <script language="javascript" type="text/javascript" src="scripts/GlobalVariables.js"></script>
+  <script language="javascript" type="text/javascript" src="scripts/Preload.js"></script>
+  <script language="javascript" type="text/javascript" src="scripts/MainMenu.js"></script>
+  <script language="javascript" type="text/javascript" src="scripts/GamePlay.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <script>
+  // On page load create game config
+  var config = {
+    type: Phaser.AUTO,
+    width: 640,
+    height: 480,
+    scene: myGame.scenes
+  };
+
+  // Instantiating the game with the config
+  var game = new Phaser.Game(config);
+  </script>
+</body>
+</html>

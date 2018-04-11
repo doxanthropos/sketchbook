@@ -1,0 +1,17 @@
+body {
+  margin: auto;
+  text-align: center;
+  background: #AACCFF;
+}
+
+h1 {
+  padding: 10px;
+  font-family: cursive;
+  color: #FF44AA;
+}
+footer {
+  font-size: 0.7em;
+}
+canvas {
+  margin: auto;
+}

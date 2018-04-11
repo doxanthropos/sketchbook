@@ -1,33 +1,72 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Phaser Example from Catt Small on Coding Train</title>
-  <!-- followed this video tutorial: https://www.youtube.com/watch?v=T9kOFSFvgKc -->
+  <title>Hello Phaser!</title>
+  <!--
+  This is the first example program from http://phaser.io/tutorials/getting-started-phaser3/part5
+  http://phaser.io/tutorials/getting-started-phaser3/part5
+
+  -->
 
   <!-- Loading Phaser -->
   <script language="javascript" type="text/javascript" src="scripts/phaser.min.js"></script>
 
   <!-- Loading the other game files -->
-  <script language="javascript" type="text/javascript" src="scripts/GlobalVariables.js"></script>
-  <script language="javascript" type="text/javascript" src="scripts/Preload.js"></script>
-  <script language="javascript" type="text/javascript" src="scripts/MainMenu.js"></script>
-  <script language="javascript" type="text/javascript" src="scripts/GamePlay.js"></script>
+
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-
+<h1>Learning Phaser Game Development</h1>
+<p>This is the first example program from <a href="http://phaser.io/tutorials/getting-started-phaser3/part5">Getting Started with Phaser 3</a></p>
   <script>
   // On page load create game config
   var config = {
     type: Phaser.AUTO,
-    width: 640,
-    height: 480,
-    scene: myGame.scenes
+    width: 800,
+    height: 600,
+    physics: {
+      default: "arcade",
+      arcade: {
+        gravity: { y: 200 },
+        debug: false
+      }
+    },
+    scene: {
+      preload: preload,
+      create: create
+    }
   };
 
   // Instantiating the game with the config
   var game = new Phaser.Game(config);
+
+  function preload(){
+    this.load.setBaseURL('http://labs.phaser.io');
+    this.load.image('sky', 'assets/skies/space3.png');
+    this.load.image('logo', 'assets/sprites/phaser3-logo.png');
+    this.load.image('red', 'assets/particles/red.png');
+  }
+  function create(){
+    this.add.image(400,300,'sky');
+
+    var particles = this.add.particles('red');
+
+    var emitter = particles.createEmitter({
+      speed: 100,
+      scale: { start: 1, end: 0 },
+      blendMode: 'ADD'
+    });
+    var logo = this.physics.add.image(400,100, 'logo');
+
+    logo.setVelocity(100,200);
+    logo.setBounce(1, 1);
+    logo.setCollideWorldBounds(true);
+
+    emitter.startFollow(logo);
+
+  }
   </script>
+  <footer>Made with <a href="http://phaser.io/">Phaser.io</a></footer>
 </body>
 </html>

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Terminus;
+    src: url('fonts/VecTerminus32Medium.otf') format('opentype');
+}
+
+body {
+    margin: 0;
+    color: #8888FF;
+    text-align: center;
+    font-family: Terminus, monospace;
+    background: #000;
+}
+
+h1 {
+    margin: 10vh;
+    font-size: 5vw;
+}
+section {
+    font-size: 3vw;
+}

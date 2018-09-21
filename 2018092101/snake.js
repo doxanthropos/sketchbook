@@ -39,7 +39,6 @@ class Snake {
     let x = this.body[this.body.length-1].x;
     let y = this.body[this.body.length-1].y;
     if (x===pos.x && y === pos.y){
-      print("FOOD EATEN");
       this.grow();
       return true;
     } else {

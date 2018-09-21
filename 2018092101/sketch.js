@@ -79,6 +79,5 @@ function foodLocation(){
 }
 
 function mousePressed(){
-  print("Mouse Pressed")
   gameState = "PLAY";
 }

@@ -32,6 +32,7 @@ if sketchtype in options:
     os.system("cp -r ./" + options[sketchtype] + " " + sketchname)
     os.system("$myEditor " + sketchname + "/sketch.js &")
     os.system("http-server ./" + sketchname)
+    #os.system("google-chrome ./" + sketchname + "/index.html")
 else:
     print("You did not choose one of the possible options.")
     print("Aborting sketch creation.")

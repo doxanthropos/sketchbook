@@ -6,6 +6,14 @@ let h;
 let gameState = "START";
 let score = 0;
 let highScore = 0;
+let startSound, foodSound, dieSound;
+function preload(){
+  soundFormats("wav");
+  startSound = loadSound("audio/start.wav");
+  dieSound = loadSound("audio/die.wav");
+  foodSound = loadSound("audio/food.wav");
+}
+
 function setup() {
   createCanvas(500,500);
   w = floor(width/rez);
@@ -34,9 +42,11 @@ function drawPlay(){
     gameState = "GAME OVER";
     score = snake.body.length -1;
     highScore = max(score, highScore);
+    dieSound.play();
   };
   if (snake.eat(food)){
     foodLocation();
+    foodSound.play();
   }
   fill(200,0,0);
   rect(food.x, food.y, 1, 1);
@@ -80,4 +90,5 @@ function foodLocation(){
 
 function mousePressed(){
   gameState = "PLAY";
+  startSound.play();
 }

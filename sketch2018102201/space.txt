@@ -1,0 +1,5 @@
+Processing is an open-source graphical library and integrated development environment (IDE) / playground built for the electronic arts, new media art, and visual design communities with the purpose of teaching non-programmers the fundamentals of computer programming in a visual context.
+
+Processing uses the Java language, with additional simplifications such as additional classes and aliased mathematical functions and operations. As well as this, it also has a graphical user interface for simplyfing the compilation and execution stage.
+
+The Processing language and IDE were the precursor to numerous other projects, notably Arduino, Wiring and P5.js. 

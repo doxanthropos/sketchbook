@@ -4,7 +4,7 @@ import os,sys,re
 from datetime import datetime
 
 
-options = { '0':'empty-example','1':'empty-threejs', '2':'empty-aframe', '3':'empty-html', '4':'empty-phaser' }
+options = { '0':'empty-example','1':'empty-threejs', '2':'empty-aframe', '3':'empty-html', '4':'empty-phaser', '5':'empty-rune' }
 currentDir = os.listdir("./")
 currentDate = datetime.today().strftime("%Y%m%d")
 r = re.compile(currentDate + ".")
@@ -16,6 +16,7 @@ print("(1) for Three.js")
 print("(2) for A-Frame")
 print("(3) for just HTML")
 print("(4) for Phaser.io")
+print("(5) for Rune.js")
 print("");
 sketchtype = raw_input(">> ")
 if(len(todaysSketches)>=9):

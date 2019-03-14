@@ -5,6 +5,7 @@ var fadeInterval = 1.6;
 
 function setup() {
   createCanvas(window.innerWidth,window.innerHeight);
+  colorMode(HSB);
   background(0);
   var x = 0;
   for (var i = 0; i <= width/symbolSize;i++){
@@ -71,9 +72,9 @@ function Stream(){
   this.render = function(){
     this.symbols.forEach(function(symbol){
       if (symbol.first){
-        fill(180,255,180,symbol.opacity);
+        fill(map(symbol.x,width,0,255),55,255,symbol.opacity);
       } else {
-        fill(0,255,70,symbol.opacity);
+        fill(map(symbol.x,0,width,0,255),255,255,symbol.opacity);
       }
     text(symbol.value, symbol.x, symbol.y);
     if(frameCount % symbol.switchInterval == 0){

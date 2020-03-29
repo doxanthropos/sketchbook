@@ -8,7 +8,7 @@ options = { '0':'empty-example','1':'empty-threejs', '2':'empty-aframe', '3':'em
 currentDir = os.listdir("./")
 currentDate = datetime.today().strftime("%Y%m%d")
 r = re.compile(currentDate + ".")
-todaysSketches = filter(r.match,currentDir)
+todaysSketches = list(filter(r.match,currentDir))
 
 print("What kind of sketch do you want to create today?")
 print("(0) for p5.js")
@@ -18,7 +18,7 @@ print("(3) for just HTML")
 print("(4) for Phaser.io")
 print("(5) for Rune.js")
 print("");
-sketchtype = raw_input(">> ")
+sketchtype = input(">> ")
 if(len(todaysSketches)>=9):
     sketchname = currentDate + str(len(todaysSketches) + 1)
     print( currentDate + "0" + str(len(todaysSketches) + 1))

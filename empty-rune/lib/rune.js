@@ -572,10 +572,9 @@ var ROUND_PRECISION = 9;
 var Vector = function(x, y) {
   this.x = x || 0;
   this.y = y || 0;
-}
+};
 
 Vector.prototype = {
-
   type: "vector",
 
   set: function(x, y) {
@@ -597,7 +596,7 @@ Vector.prototype = {
 
   divide: function(scalar) {
     var vec = new Vector(0, 0);
-    if(scalar) {
+    if (scalar) {
       vec.x = this.x / scalar;
       vec.y = this.y / scalar;
     }
@@ -648,6 +647,14 @@ Vector.prototype = {
     return new Vector(x, y);
   },
 
+  limit: function(max) {
+    const mSq = this.lengthSquared();
+    if (mSq > max * max) {
+      return this.divide(Math.sqrt(mSq)).multiply(max);
+    }
+    return this.copy();
+  },
+
   copy: function() {
     return new Vector(this.x, this.y);
   },
@@ -655,8 +662,7 @@ Vector.prototype = {
   toString: function() {
     return "(x: " + this.x + ", y: " + this.y + ")";
   }
-
-}
+};
 
 module.exports = Vector;
 
@@ -1193,7 +1199,7 @@ var Color = function(a, b, c, d, e) {
   } else if (typeof a !== "undefined") {
     // RGB
     this.setValues("rgb", { r: a, g: b, b: c });
-    if (d) this.setValues("alpha", d);
+    if (typeof d !== "undefined") this.setValues("alpha", d);
   }
 };
 

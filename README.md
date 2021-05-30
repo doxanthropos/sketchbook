@@ -21,7 +21,7 @@ The script will ask you, what type of sketch you want to start and you have to a
 
 While I started reading "Complexity. A Guided Tour" by Melanie Mitchell (2009), I though it might be nice to code some of the examples. I imagine, some might be web based visualizations, some not.
 
-They are [here].(/complexity).
+They are [here](/complexity).
 
 ### Older Sketches
 

@@ -17,6 +17,14 @@ The script will ask you, what type of sketch you want to start and you have to a
 
 ## Some sketches
 
+### Complexity
+
+While I started reading "Complexity. A Guided Tour" by Melanie Mitchell (2009), I though it might be nice to code some of the examples. I imagine, some might be web based visualizations, some not.
+
+They are [here].(/complexity).
+
+### Older Sketches
+
 * [Codevember2017](https://doxanthropos.github.io/sketchbook/codevember2017)
 
 * [2017092902](https://doxanthropos.github.io/sketchbook/2017092902): 10PRINT with changing colors

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>p5.js example</title>
+  <title>Logistic Map</title>
   <style>
     body {
       padding: 0;
@@ -13,6 +13,13 @@
     canvas {
       border-style: solid;
     }
+    main {
+      float: left;
+      margin-right: 30px
+    }
+    footer {
+      float: clear;
+    }
   </style>
   <script src="./p5.min.js"></script>
   <!-- <script src="./addons/p5.sound.js"></script> -->
@@ -20,8 +27,25 @@
 </head>
 
 <body>
+  <p>[<a href="https://doxanthropos.github.io/sketchbook/complexity/">back</a>]|[<a href="https://github.com/doxanthropos/sketchbook/tree/master/complexity/logisticMap">source</a>]</p>
   <main>
   </main>
+  <p class="control">
+  <form>
+    <label for="x">Starting Value of x (between 0 and 1)</label><br />
+  <input type="number" id="x" name="x" min="0.0" max="1.0" value="0.2" step="0.01" />
+  <br />
+  <label for="r">R</label><br />
+  <input type="number" id="r" name="r" min="0.0" max="100.0" value="2.0" step="0.1" />
+  <br />
+  <label for="steps">Number of steps to calculate</label><br />
+  <input type="number" id="steps" name="steps" min="1" max="300" value="10" />
+  <br />
+  <button type="button" id="recalculate">Recalculate</button>
+  </form>
+  </p>
+  <div style="clear:both"></div>
+  <footer>Wikipedia on the <a href="https://en.wikipedia.org/wiki/Logistic_map">logistic map</a></footer>
 </body>
 
 </html>

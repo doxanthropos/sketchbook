@@ -1,6 +1,10 @@
 const width  = 500;
 const height = 500;
 var currentX;
+var colwidth;
+document.addEventListener("click", function(){
+  redraw();
+});
 
 /* Example values */
 
@@ -11,16 +15,22 @@ var steps = 16;
 function setup() {
   createCanvas(width,height);
   background(255);
+  document.getElementById("recalculate").addEventListener("click", function(){
+    x = parseFloat(document.getElementById("x").value);
+    r = parseFloat(document.getElementById("r").value);
+    steps = parseInt(document.getElementById("steps").value);
+    redraw();
+  });
   noLoop();
 }
 
 function draw() {
+  background(255);
   drawNumbers();
   fill(255,50,100);
-  let colwidth = width / (steps + 1);
+  colwidth = width / (steps + 1);
   currentX = x;
   for (let step = 0; step < steps; step++){
-    print("Current X " + currentX);
     y = map(currentX, 0.0,1.0,height,0);
     ellipse((step +1) * colwidth, y, colwidth / 2, colwidth/ 2);
     currentX = nextX(currentX,r);

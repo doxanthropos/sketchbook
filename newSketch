@@ -12,10 +12,12 @@ todaysSketches = list(filter(r.match,currentDir))
 
 print("What kind of sketch do you want to create today?")
 print("(0) for p5.js")
-print("(1) for Three.js")
-print("(2) for A-Frame")
+# I do not use Three, Phaser and Aframe at the moment, so I will
+# not bother keeping the templates updated for new projects.
+# print("(1) for Three.js")
+# print("(2) for A-Frame")
 print("(3) for just HTML")
-print("(4) for Phaser.io")
+# print("(4) for Phaser.io")
 print("(5) for Rune.js")
 print("");
 sketchtype = input(">> ")
